@@ -1,0 +1,115 @@
+<!-- Create new Board Modal -->
+<div class="modal fade" id="createNewBoardModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Create New Board</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="" action="index.php" method="post">
+          <div class="form-group">
+            <label for="boardName">Board Title:</label>
+            <input type="text" class="form-control"  placeholder="scrum #x" name="boardTitle" required>
+            <small  class="form-text text-muted">Enter title of new Board</small>
+          </div>
+
+          <div class="form-group">
+            <label for="boardName">Board Description:</label>
+            <textarea type="text" class="form-control"  placeholder="details about this scrum" name="boardDescription" rows="4" cols="50" required></textarea>
+            <small  class="form-text text-muted">Enter description about the scrum</small>
+          </div>
+
+
+
+          <button type="submit" class="btn btn-primary" name="newBoardsubmit">Create</button>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container" style="width:80%; height:50%; margin-bottom:5%;">
+
+  <!-- if admin-->
+  <div *ngIf="admin" class="col-sm" data-toggle="modal" data-target="#createNewBoardModal">
+    <div class="card box-shadow">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">New</h4>
+      </div>
+      <div class="card-body">
+        <img src="../assets/images/add.png" width="100%" height="50%" style="margin:2%;">
+
+        <p> Only Admins can Create Boards - but all other users will see these and can add Cards to the Board
+        </p><button type="button" class="btn btn-lg btn-block btn-outline-primary" data-toggle="modal" data-target="#createNewBoardModal">Create a new Board</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="row">
+
+
+<a  *ngFor="let number of [0,1,2,3,4]" >
+
+    <div class=".col-lg-16 btn-social" style="margin:20%;">
+      <div class="card box-shadow">
+        <div class="card-header">
+          <h4 class="my-0 font-weight-normal" style="width:100%">{{boardTitle}}</h4>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title"></h1>
+          <ul class="list-unstyled mt-3 mb-4">
+
+            <li>{{boardCreated }}</li>
+          </ul>
+
+          <div  *ngIf="admin; then adminTmp else userTmp"></div>
+
+          <ng-template #adminTmp >
+            <button type="button" class="btn btn-lg btn-block btn-outline-primary" data-toggle="collapse" data-target="#demo">Board Settings</button>
+            <div id="demo" class="collapse" style="margin:5%;">
+              <tr>
+                <td style="padding:15%;">{{boardTitle}}</td>
+                <td><br><input type="checkbox" checked data-toggle="toggle"></td>
+              </tr>
+            </div>
+          </ng-template>
+
+
+
+      <ng-template #userTmp >
+        <button type="button" class="btn btn-lg btn-block btn-outline-primary" data-toggle="collapse" data-target="#demo'.$x.'">See Remaining Days </button>
+        <div id="demo" class="collapse" style="margin:5%;">
+          <tr>
+            <br>
+            <td>
+              {{numofdays}}
+            </td>
+          </tr>
+        </div>
+
+
+      </ng-template>
+
+
+
+        </div>
+      </div>
+    </div>
+  </a>
+
+</div>
+
+
+<hr>
