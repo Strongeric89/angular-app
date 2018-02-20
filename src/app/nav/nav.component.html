@@ -2,18 +2,21 @@
   <h5 class="my-0 mr-md-auto font-weight-normal"><img src="../assets/images/logo.png">Saprello</h5>
 
   <nav class="my-2 my-md-0 mr-md-3">
+      <a class="p-2 text-dark" routerLink="/">Dashboard</a>
 
     <!-- if admin -->
-      <a *ngIf="admin == 1" class="p-2 text-dark" href="#">Admin Settings</a>
+      <a *ngIf="admin == 1" class="p-2 text-dark" routerLink="/settings" >Settings</a>
         <!-- if user -->
-      <a *ngIf="admin == 0" class="p-2 text-dark" href="#">Board Settings</a>
+      <!-- <a *ngIf="admin == 0" class="p-2 text-dark" routerLink="/settings">Board Settings</a> -->
 
         <img src="../assets/images/profiler.png" class="img-circle"  width="20px" height="20px">
 
-    <a class="p-2 text-dark" href="#">Edit Profile</a>
+      
+
+    <a class="p-2 text-dark" routerLink="/userprofile">Edit Profile</a>
 
   </nav>
-  <a class="btn btn-outline-primary" href="#">Sign out</a>
+  <a class="btn btn-outline-primary" routerLink="/login">Sign out</a>
 </div>
 
 <div class="jumbotron">

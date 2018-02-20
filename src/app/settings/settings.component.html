@@ -1,0 +1,102 @@
+<div class="container">
+
+      <form class="" action="" method="post">
+
+          <div class="form-group">
+            <label for="boardName">Add new Admin Name:</label>
+            <input type="text" class="form-control"  placeholder="Enter name" name="name">
+            <small id="emailHelp" class="form-text text-muted">Enter New Admin name</small>
+          </div>
+
+          <div class="form-group">
+            <label for="boardName">Add new Admin Email:</label>
+            <input type="email" class="form-control"  placeholder="inumber@sap.com" name="email">
+            <small id="emailHelp" class="form-text text-muted">Enter Email</small>
+          </div>
+
+          <div class="form-group">
+            <label for="boardName">Add new Admin I Number:</label>
+            <input type="text" class="form-control"  placeholder="Enter iNumber" name="iNumber">
+            <small id="emailHelp" class="form-text text-muted">Enter New Admin I-Number</small>
+          </div>
+
+
+        <button type="submit" class="btn btn-primary" name="submit">Create</button>
+    </form>
+
+
+  <hr>
+
+
+  <div class="container">
+    <h2>Edit / Remove Boards </h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Board Title</th>
+            <th>Edit</th>
+            <th>Remove</th>
+            <th>Show / Hide</th>
+          </tr>
+        </thead>
+      <tbody>
+
+
+        <!-- //  for ($x = 1; $x <= $numofscrums; $x++) { -->
+          <tr>
+              <td>boardId</td>
+              <td>boardTitle</td>
+              <td><button type="button" class="btn btn-lg btn-block btn-outline-primary" >Edit</button></td>
+              <td> <button type="button" class="btn btn-lg btn-block btn-outline-primary" >Remove</button></td>
+
+              <td><input type="checkbox" checked data-toggle="toggle"></td>
+
+          </tr>
+
+
+      </tbody>
+      </table>
+  </div>
+
+
+
+
+  <hr>
+
+
+  <div class="container">
+    <h2>Add / Remove Admins </h2>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+     
+          <th>Remove</th>
+        </tr>
+        </thead>
+        <tbody>
+
+              <!-- for ($x = 1; $x <=$numResults; $x++) { -->
+                <tr>
+                    <td>AdminId</td>
+                    <td>adminName</td>
+
+                      <form class="" action="" method="post">
+
+                        <td><input name="admin" value="" hidden="hidden"></td>
+
+
+                        <td><button type="submit" class="btn btn-lg btn-block btn-outline-primary" name="removeAdmin">Remove</button></td>
+
+                    </form>
+                  </tr>
+
+
+
+        </tbody>
+      </table>
+  </div>
+
+</div>
